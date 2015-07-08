@@ -58,14 +58,14 @@ augroup vimrcEx
   autocmd FileType css,scss,sass setlocal iskeyword+=-
 augroup END
 
-" Softtabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
+" Tabs, 4 spaces
+set tabstop=4
+set shiftwidth=4
 set shiftround
-set expandtab
+" set expandtab
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
+" set list listchars=tab:»·,trail:·,nbsp:·
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -80,7 +80,7 @@ if executable('ag')
 endif
 
 " Make it obvious where 80 characters is
-set textwidth=80
+" set textwidth=80
 set colorcolumn=+1
 
 " Numbers
@@ -153,6 +153,15 @@ set complete+=kspell
 
 " Always use vertical diffs
 set diffopt+=vertical
+
+" Move between open buffers.
+map <C-n> :bnext<CR>
+map <C-p> :bprev<CR>
+nmap \r :TagbarToggle<CR>
+nmap \e :NERDTreeToggle<CR>
+nmap ; :CtrlP<CR>
+
+colorscheme railscasts
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
