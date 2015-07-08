@@ -154,12 +154,15 @@ set complete+=kspell
 " Always use vertical diffs
 set diffopt+=vertical
 
+" dcarlson
 " Move between open buffers.
 map <C-n> :bnext<CR>
 map <C-p> :bprev<CR>
 nmap \r :TagbarToggle<CR>
 nmap \e :NERDTreeToggle<CR>
 nmap ; :CtrlP<CR>
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 colorscheme railscasts
 
